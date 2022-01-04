@@ -3,7 +3,6 @@ import burger from './img/burger.png';
 import removeContents from './removeContents';
 import showMenu from './menu';
 import createAndAppend from './createAndAppend.js';
-import Element from './domGetter.js';
 
 function showHome() {
 
@@ -18,7 +17,7 @@ function showHome() {
     stellasLogo.src = Logo;
     container.appendChild(stellasLogo);
 
-    createAndAppend('h2', 'hours-header', "STELLA'S LOUNGE (BAR + RESTAURANT)", container);
+    createAndAppend('h2', 'hours-header', "STELLA'S LOUNGE <br>(BAR + RESTAURANT)", container);
 
 
     //hours

@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 @font-face{
     font-family: 'Permanent Marker';
     src: url('./PermanentMarker-Regular.ttf');
@@ -7,17 +11,44 @@
     font-family: 'din-condensed-web';
     src: url('./DIN\ Condensed\ Web.ttf');
 }
+
+header{
+    background-color: rgb(41, 23, 23);
+    margin: 0px;
+    border: none;
+    border-bottom: 1px solid rgb(73, 5, 5);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+}
+
 body{
     background-color: black;
+    padding: 0px;
+    margin: 0px;
 }
 
 li{
     list-style: none;
     font-family: 'din-condensed-web';
+    font-size: 20px;
 }
 
 img{
     margin: 10px 0px;
+}
+
+p{
+    font-family: "din-condensed-web";
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: rgb(201, 190, 190);
+    max-width: 300px;
+    text-align: center;
+
 }
 
 #content button{
@@ -25,11 +56,13 @@ img{
     background-color: red;
     color: white;
     height: 50px;
-    border: 3px solid rgb(41, 23, 23);
+    border: 1px solid rgb(255, 243, 243);
     border-radius: 5px;
     font-size: 20px;
     font-weight: 800;
     font-family: 'din-condensed-web';
+    cursor: pointer;
+    margin-bottom: 5px;
 }
 
 .nav{
@@ -40,7 +73,6 @@ img{
     color: white;
     display: inline-block;
     margin-right: 20px;
-    margin-top: 20px;
     cursor: pointer;
 }
 
@@ -57,12 +89,27 @@ img{
 
 #content *{
     width: 35vw;
-    max-width: 500px;
+    max-width: 350px;
+    min-width: 200px;
+}
+
+#content > *:first-child{
+    padding-top: 60px;
+}
+
+h1{
+    font-family:"Permanent Marker";
+    font-size: 48px;
+    background-color: rgb(241, 0, 0);
+    text-align: center;
+    border: 3px solid rgb(255, 243, 243);
 }
 
 h2{
     font-family: "Permanent Marker";
     margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
 }
 
 h3{
@@ -70,4 +117,32 @@ h3{
     font-weight: bolder;
     font-size: 1em;
     margin-bottom: 0px;
+    text-align: center;
+}
+
+h4{
+    font-family:  "din-condensed-web";
+    font-size: 32px;
+    font-weight: bolder;
+    margin: 5px;
+}
+
+.menu-item{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.menu-item *{
+    max-width: 300px;
+}
+
+.menu-item img{
+    max-height: 400px;
+    border: 2px solid white;
 }

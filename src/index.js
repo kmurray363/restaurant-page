@@ -15,6 +15,7 @@ makeHeader("STELLA'S LOUNGE", "MENU", "CONTACT");
 })();
 
 const $headers = document.querySelectorAll("header li");
+showHome();
 
 //event listeners to switch pages
 $headers.forEach((header) => {
