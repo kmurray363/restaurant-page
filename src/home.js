@@ -1,20 +1,16 @@
 import Logo from './img/stellasLogo.PNG';
+import burger from './img/burger.png';
 import removeContents from './removeContents';
 import showMenu from './menu';
-
-function createAndAppend(elementType, elementClass, elementText, appendTarget){
-    const element = document.createElement(`${elementType}`);
-    element.innerHTML = `${elementText}`;
-    if (elementClass) {
-        element.classList.add(`${elementClass}`);
-    };
-    appendTarget.appendChild(element);
-    return element;
-}
+import createAndAppend from './createAndAppend.js';
+import Element from './domGetter.js';
 
 function showHome() {
-    const currentHeading = document.querySelector('.heading-1');
-    currentHeading.setAttribute("style", "color : red;");
+
+    document.querySelector('.heading-1').setAttribute("style", "color : red;");
+    document.querySelector('.heading-2').setAttribute("style", "color : white;");
+    document.querySelector('.heading-3').setAttribute("style", "color : white;");
+
     const container = document.getElementById('content');
 
     //logo
@@ -22,9 +18,8 @@ function showHome() {
     stellasLogo.src = Logo;
     container.appendChild(stellasLogo);
 
-    const hoursHeader = document.createElement('p');
-    hoursHeader.innerHTML = "STELLA'S LOUNGE (BAR + RESTAURANT)";
-    container.appendChild(hoursHeader);
+    createAndAppend('h2', 'hours-header', "STELLA'S LOUNGE (BAR + RESTAURANT)", container);
+
 
     //hours
     const hoursList = createAndAppend('ul', 'hours-list','',container);
@@ -34,7 +29,7 @@ function showHome() {
     createAndAppend('li', false, "Sunday: 1 PM - 11 PM", hoursList);
 
     //holiday hours
-    createAndAppend('p','list-header', 'HOLIDAY HOURS',container);
+    createAndAppend('h2','list-header', 'HOLIDAY HOURS',container);
     const holidayHours = createAndAppend('ul', 'holiday-hours','', container);
     createAndAppend('li', false, "11/24: CLOSED", holidayHours);
     createAndAppend('li', false, "12/25: CLOSED", holidayHours);
@@ -48,9 +43,16 @@ function showHome() {
         showMenu();
     })
 
+    //borger
+
+    const burgerImg = new Image();
+    burgerImg.src = burger;
+    container.appendChild(burgerImg);
+
+
     //chronic hour
-    createAndAppend('p','list-header', "CHRONIC HOUR AT STELLA'S", container);
-    createAndAppend('p', 'chronic-header', "MONDAY - THURSDAY 4 PM - 5:30 PM", container);
+    createAndAppend('h2','list-header', "CHRONIC HOUR AT STELLA'S", container);
+    createAndAppend('h3', 'chronic-header', "MONDAY - THURSDAY 4 PM - 5:30 PM", container);
     const chronicList = createAndAppend('ul', 'chronic-list', '', container);
     createAndAppend('li', false, "1/2 off Chronic Fry Appetizer", chronicList);
     createAndAppend('li', false, "$5.00 Nachos", chronicList);
